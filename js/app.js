@@ -23,7 +23,8 @@
  * 
 */
 const sections = document.getElementsByTagName("section");
-const menu = document.getElementById("navbar__list");
+const menu = document.getElementById("navbar__list")
+const defaultTimeOut = 3000;
 
 /**
  * End Global Variables
@@ -52,6 +53,16 @@ const addNavItemsToMenu = () => {
     menu.appendChild(fragment);
 }
 
+const setActiveLink = (id) => {
+    for(let navLink of navLinks){
+        if(navLink.getAttribute("href") === id){
+            navLink.classList.add("active");
+            continue;
+        }
+        navLink.classList.remove("active");
+    }
+}
+
 const setActiveSection = () => {
     for(let section of sections){
         let currSectionTopValue = section.getBoundingClientRect().top;
@@ -65,13 +76,23 @@ const setActiveSection = () => {
     }
 }
 
+const showNavBarMenu = () => {
+    menu.style.display = "block";
+}
+
+const hideNavBarMenu = () => {
+    menu.style.display = "none";
+}
+
 // build the nav
 addNavItemsToMenu();
 
 
 // Add class 'active' to section when near top of viewport
 document.addEventListener("scroll", () => {
+    //showNavBarMenu();
     setActiveSection();
+    //setTimeout(hideNavBarMenu, defaultTimeOut);
 })
 
 
@@ -81,10 +102,11 @@ for(let navLink of navLinks) {
     navLink.addEventListener("click", (event) => {
         event.preventDefault();
         const targetSection = document.getElementById(navLink.getAttribute("href"));
+        setActiveLink(targetSection.id);
         targetSection.scrollIntoView({
             behavior: "smooth",
-            block: "end",
-            inline: "nearest",
+            block: "end", 
+            inline: "nearest"
         })
     })
 };
@@ -95,10 +117,18 @@ for(let navLink of navLinks) {
  * 
 */
 
-// Build menu 
 
-// Scroll to section on link click
+// Show menu for 3 seconds when click event is registered
+/* document.addEventListener("click", () => {
+    showNavBarMenu();
+    setTimeout(hideNavBarMenu, defaultTimeOut);
+}) */
 
-// Set sections as active
+//show menu for 3 seconds when mouse move event is registered
+/* document.addEventListener*"mousemove", () => {
+    showNavBarMenu();
+    setTimeout(hideNavBarMenu, defaultTimeOut);
+} */
+
 
 

@@ -67,7 +67,16 @@ section {
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px){
+    .navbar__menu ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
 }
 
 .navbar__menu li {
@@ -80,6 +89,12 @@ section {
     font-weight: bold;
     text-decoration: none;
     color: #000;
+}
+
+.navbar__menu .menu__link.active {
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
 }
 
 .navbar__menu .menu__link:hover {
