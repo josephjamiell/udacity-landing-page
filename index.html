@@ -1,0 +1,67 @@
+<!DOCTYPE >
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manipulating the DOM</title>
+  <!-- Load Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- HTML Follows BEM naming conventions 
+  IDs are only used for sections to connect menu achors to sections -->
+  <header class="page__header">
+    <nav class="navbar__menu">
+      <!-- Navigation starts as empty UL that will be populated with JS -->
+      <ul id="navbar__list"></ul>
+    </nav>
+  </header>
+  <main>
+    <header class="main__hero">
+      <h1>Caribbean Islands</h1>
+    </header>
+    <!-- Each Section has an ID (used for the anchor) and 
+    a data attribute that will populate the li node.
+    Adding more sections will automatically populate nav.
+    The first section is set to active class by default -->
+    <section id="antigua" data-nav="Antigua" class="your-active-class">
+      <div class="landing__container">
+        <h2>Antigua</h2>
+        <p>Antigua means "ancient" in Spanish after an icon in Seville Cathedral, "Santa María de la Antigua" — St. Mary of the Old Cathedral.[4] The name Waladli[5] comes from the indigenous inhabitants and means approximately "our own".[citation needed] The island's perimeter is roughly 87 km (54 mi) and its area 281 km2 (108 sq mi). Its population was 83,191 (at the 2011 Census).[6] The economy is mainly reliant on tourism, with the agricultural sector serving the domestic market.</p>
+
+        <p>Over 22,000 people live in the capital city, St. John's. The capital is situated in the north-west and has a deep harbour which is able to accommodate large cruise ships. Other leading population settlements are All Saints (3,412) and Liberta (2,239), according to the 2001 census.</p>
+      </div>
+    </section>
+    <section id="jamaica" data-nav="Jamaica">
+      <div class="landing__container">
+        <h2>Jamaica</h2>
+        <p>Originally inhabited by the indigenous Taíno peoples, the island came under Spanish rule following the arrival of Christopher Columbus in 1494. Many of the indigenous people either were killed or died of diseases, after which the Spanish brought large numbers of African slaves to Jamaica as labourers.[11] The island remained a possession of Spain until 1655, when England (later Great Britain) conquered it, renaming it Jamaica. Under British colonial rule Jamaica became a leading sugar exporter, with a plantation economy dependent on the African slaves and later their descendants. The British fully emancipated all slaves in 1838, and many freedmen chose to have subsistence farms rather than to work on plantations. Beginning in the 1840s, the British began using Chinese and Indian indentured labour to work on plantations. The island achieved independence from the United Kingdom on 6 August 1962.[</p>
+
+        <p>Jamaica is an upper-middle income country[17] with an economy heavily dependent on tourism; it has an average of 4.3 million tourists a year.[18] Jamaica performs favourably in measurements of press freedom and democratic governance. It ranked first in the Caribbean on the World Happiness Report for 2021.[19] Politically it is a Commonwealth realm, with Elizabeth II as its queen.[11] Her appointed representative in the country is the Governor-General of Jamaica, an office held by Patrick Allen since 2009. Andrew Holness has served as Prime Minister of Jamaica since March 2016. Jamaica is a parliamentary constitutional monarchy with legislative power vested in the bicameral Parliament of Jamaica, consisting of an appointed Senate and a directly elected House of Representatives.</p>
+      </div>
+    </section>
+    <section id="barbados" data-nav="Barbados">
+      <div class="landing__container">
+        <h2>Barbados</h2>
+        <p>Inhabited by Kalinago people since the 13th century, and prior to that by other Amerindians, Spanish navigators took possession of Barbados in the late 15th century, claiming it for the Crown of Castile. It first appeared on a Spanish map in 1511.[7] The Portuguese Empire claimed the island between 1532 and 1536, but abandoned it in 1620 with their only remnants being an introduction of wild boars for a good supply of meat whenever the island was visited. An English ship, the Olive Blossom, arrived in Barbados on 14 May 1625; its men took possession of the island in the name of King James I. In 1627, the first permanent settlers arrived from England, and Barbados became an English and later British colony.[8] During this period, the colony operated on a plantation economy, relying on the labour of enslaved Africans who worked on the island's plantations. The slave trade to the island continued until it was outlawed by the Slave Trade Act 1807, with final emancipation of the enslaved population in Barbados occurring over a period of five years following the Slavery Abolition Act 1833</p>
+
+        <p>On 30 November 1966, Barbados became an independent state and Commonwealth realm with Elizabeth II as Queen of Barbados. In October 2021, Sandra Mason was elected by Parliament to become the first President of Barbados. On 30 November 2021, Mason replaced Queen Elizabeth as head of state, with Barbados transitioning to a republic within the Commonwealth of Nations</p>
+      </div>
+    </section>
+    <section id="dominica" data-nav="Dominica">
+      <div class="landing__container">
+        <h2>Dominica</h2>
+        <p>Dominica, is an island country in the Caribbean.[13] The capital, Roseau, is located on the western side of the island. It is geographically situated as part of the Windward Islands chain in the Lesser Antilles archipelago in the Caribbean Sea. Dominica's closest neighbours are two constituent territories of the European Union and Eurozone, the overseas departments of the French Republic, Guadeloupe to the northwest and Martinique to the south-southeast. Dominica comprises a land area of 750 km2 (290 sq mi), and the highest point is Morne Diablotins, at 1,447 m (4,747 ft) in elevation. The population was 71,293 at the 2011 census.</p>
+
+        <p>The island was settled by the Arawak arriving from South America in the fifth century. The Kalinago displaced the Arawak by the 15th century. Columbus is said to have passed the island on Sunday, 3 November 1493. It was later colonised by Europeans, predominantly by the French from the 1690s to 1763. The French imported enslaved people from West Africa to Dominica to work on coffee plantations. Great Britain took possession in 1763 after the Seven Years' War, and it gradually established English as its official language. The island gained independence as a republic in 1978.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="page__footer">
+    <p>&copy Udacity</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
