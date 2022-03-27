@@ -74,6 +74,7 @@ const setActiveSection = () => {
 
         if(currSectionTopValue > -250 && currSectionTopValue < 500){
             section.classList.add("your-active-class");
+            setActiveLink(section.id);
         } else {
             section.classList.remove("your-active-class");
         }
