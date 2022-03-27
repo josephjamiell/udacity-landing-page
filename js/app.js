@@ -41,6 +41,7 @@ const defaultTimeOut = 3000;
 */
 const addNavItemsToMenu = () => {
     let fragment = new DocumentFragment();
+
     for(let section of sections) {
         let listItem = document.createElement("li");
         let listItemLink = document.createElement("a");
@@ -50,27 +51,30 @@ const addNavItemsToMenu = () => {
         listItem.appendChild(listItemLink);
         fragment.appendChild(listItem);
     }
+
     menu.appendChild(fragment);
 }
 
 const setActiveLink = (id) => {
     for(let navLink of navLinks){
-        if(navLink.getAttribute("href") === id){
+
+        if(navLink.getAttribute("href") === id) {
             navLink.classList.add("active");
             continue;
         }
+
         navLink.classList.remove("active");
     }
 }
 
 const setActiveSection = () => {
-    for(let section of sections){
+    for(let section of sections) {
+
         let currSectionTopValue = section.getBoundingClientRect().top;
+
         if(currSectionTopValue > -250 && currSectionTopValue < 500){
             section.classList.add("your-active-class");
-
-        }
-        else {
+        } else {
             section.classList.remove("your-active-class");
         }
     }
@@ -103,11 +107,8 @@ for(let navLink of navLinks) {
         event.preventDefault();
         const targetSection = document.getElementById(navLink.getAttribute("href"));
         setActiveLink(targetSection.id);
-        targetSection.scrollIntoView({
-            behavior: "smooth",
-            block: "end", 
-            inline: "nearest"
-        })
+        let topOfElement = targetSection.offsetTop - 200;
+        window.scroll({ top: topOfElement, behavior: "smooth" });
     })
 };
 
